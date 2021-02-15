@@ -28,7 +28,7 @@ export BOOST_ROOT='/usr/local/opt/boost'
 export PATH="$PATH:/Library/Frameworks/Python.framework/Versions/3.6/bin"
 
 # Go
-export GOPATH="$HOME/Dev/go"
+export GOPATH="$HOME/.golang"
 export PATH="$PATH:$GOPATH/bin"
 
 path=(
@@ -45,7 +45,7 @@ typeset -gU cdpath fpath mailpath path
 
 # Editors
 export BROWSER="open"
-export EDITOR="vi -e"
+export EDITOR="vim"
 export PAGER='less'
 export VISUAL='vim'
 
@@ -59,3 +59,9 @@ fi
 # FZF
 alias vf='vim $(fzf)'
 export FZF_DEFAULT_COMMAND='rg --files'
+
+# VIM
+alias v="vim -c':e#<1'"
+
+# Tmuxinator
+alias mux="tmuxinator"
