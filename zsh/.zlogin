@@ -14,5 +14,5 @@ if command -v tmux &> /dev/null &&  # command tmux exists
 	[[ ! "$TERM" =~ screen ]] &&  # screen not running
 	[[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]  # tmux not running
 then
-	exec tmux new-session -A -s main
+	tmux new-session -A -s main
 fi
