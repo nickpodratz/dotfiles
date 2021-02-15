@@ -60,7 +60,8 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux zsh-autosuggestions zsh_reload zsh-syntax-highlighting)
+plugins=(git tmux tmuxinator zsh-autosuggestions zsh_reload 
+	zsh-syntax-highlighting colored-man-pages colorize k sudo)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -89,3 +90,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# ZPM
+if [[ ! -f ~/.zpm/zpm.zsh ]]; then
+  git clone --recursive https://github.com/zpm-zsh/zpm ~/.zpm
+fi
+source ~/.zpm/zpm.zsh
+
+zpm load horosgrisa/mysql-colorize
+
