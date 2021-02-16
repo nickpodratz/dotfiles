@@ -38,6 +38,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
+Plug 'vhdirk/vim-cmake'
 Plug 'tpope/vim-speeddating'
 Plug 'vim-airline/vim-airline'
 Plug 'philrunninger/nerdtree-buffer-ops'
@@ -54,6 +55,10 @@ endif
 Plug 'mhinz/vim-startify'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+if v:version >= 800
+	Plug 'skywind3000/asyncrun.vim'
+	Plug 'pedsm/sprint'
+endif
 Plug 'syngan/vim-vimlint'
 Plug 'othree/xml.vim'
 Plug 'preservim/nerdtree'
@@ -231,8 +236,8 @@ map <F6> :set list!<CR>
 " F7: next tab jumping
 map <F7> :tabp <CR>
 
-" F8: C-code compiling & executing
-map <F8> :w <CR> :!gcc % -o %< && ./%< <CR>
+" F8: Save and run
+map <F8> :w <CR> :Sprint <CR>
 
 " F9: previous tab jumping
 map <F9> :tabn <CR>
